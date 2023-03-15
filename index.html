@@ -1,93 +1,128 @@
 
 <html>
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Surprise for Lan</title>
-      <meta name="description" content="Surprise for Lan" />
-      <meta name="keywords" content="What, Is, This" />
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-       
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise for Lan</title>
+    <meta name="description" content="Surprise for Lan" />
+    <meta name="keywords" content="What, Is, This" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
-      /* 這裡可以設定網頁的樣式 */
-      body {
-        background-color: pink; /* 設定網頁背景顏色為粉紅色 */
-      }
-  
-      .photo {
-        width: 300px;
-        height: 300px;
-        margin: 10px;
-        object-fit: cover; /* 設定圖片填充模式為 cover，即保持圖片的寬高比並裁切多餘部分 */
-        border-radius: 30%; /* 設定照片圓角為50% */
-      }
-  
-      #message {
-        display: none;
-        font-size: 36px;
-        color: brown;
-        text-align: center;
-        font-family: "Comic Sans MS", cursive, sans-serif; /* 設定文字字體為 Comic Sans MS */
-      }
-  
-      p {
-        color: white; /* 設定文字顏色為白色 */
-        font-size: 24px; /* 設定文字大小為24像素 */
-        text-align: center; /* 設定文字置中對齊 */
-        font-weight: bold; /* 設定文字加粗 */
-      }
-      img {
-    cursor: url(https://www.w3docs.com/uploads/media/default/0001/01/0c6f7a8b9e0f4d5e9c1a7b8d4f6a0b5c.png), auto;
-      }
+        body {
+            background-image: linear-gradient(135deg, #f9d423 0%, #ff4e50 100%);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+
+        .photos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .photo {
+            width: 300px;
+            height: 300px;
+            margin: 10px;
+            object-fit: cover;
+            border-radius: 30%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .photo:hover {
+            transform: scale(1.05);
+            cursor: pointer;
+        }
+
+        #message {
+            display: none;
+            font-size: 36px;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+            padding: 20px;
+            border-radius: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: white;
+            font-size: 24px;
+            text-align: center;
+            font-weight: bold;
+        }
     </style>
   </head>
   <body>
-    <p>你看這邊有好多照片 <br>
-      點擊下面的照片，看看有什麼驚喜！<br>
-      每一張都要點喔</p>
-  
-    <div id="photos">
-      <!-- 這裡可以放入十張照片的網址 -->
-      <img class="photo" src="photo/1.jpg">
-      <img class="photo" src="photo/2.jpg">
-      <img class="photo" src="photo/3.jpg">
-      <img class="photo" src="photo/4.jpg">
-      <img class="photo" src="photo/5.jpg">
-      <img class="photo" src="photo/6.jpg">
-      <img class="photo" src="photo/7.jpg">
-      <img class="photo" src="photo/8.jpg">
-      <img class="photo" src="photo/9.jpg">
-      <img class="photo" src="photo/10.jpg">
-      <img class="photo" src="photo/11.jpg">
-      <img class="photo" src="photo/12.jpg">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+        <p>你看這邊有好多照片 <br>
+          點擊下面的照片，看看有什麼驚喜！<br>
+          每一張都要點喔</p>
+      </div>
     </div>
-  
-    <div id="message">情人節快熱 <br> 要不要跟我結婚二二ㄋ</div>
-  
-    <!-- 引入 jQuery 函式庫 -->
-    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-  
-    <!-- 寫一些 JavaScript 程式碼來控制網頁行為 -->
-    <script>
-      
-       // 當文件載入完成後執行以下函數
-       $(document).ready(function() {
-  
-         // 當點擊任何一張照片時執行以下函數
-         $(".photo").click(function() {
-  
-           // 將被點擊的照片隱藏起來
-           $(this).hide();
-  
-           // 如果所有的照片都隱藏了
-           if ($(".photo").length == $(".photo:hidden").length) {
-  
-             // 將訊息顯示出來
-             $("#message").show();
-           }
-         });
-       });
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <div class="d-flex flex-wrap justify-content-center" id="photos">
+          <!-- 這裡可以放入十張照片的網址 -->
+          <img class="photo m-2" src="photo/1.jpg">
+          <img class="photo m-2" src="photo/2.jpg">
+          <img class="photo m-2" src="photo/3.jpg">
+          <img class="photo m-2" src="photo/4.jpg">
+          <img class="photo m-2" src="photo/5.jpg">
+          <img class="photo m-2" src="photo/6.jpg">
+          <img class="photo m-2" src="photo/7.jpg">
+          <img class="photo m-2" src="photo/8.jpg">
+          <img class="photo m-2" src="photo/9.jpg">
+          <img class="photo m-2" src="photo/10.jpg">
+          <img class="photo m-2" src="photo/11.jpg">
+          <img class="photo m-2" src="photo/12.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+      <div class="col-12 text-center">
+        <div id="message">情人節快熱 <br> 要不要跟我結婚二二ㄋ</div>
+      </div>
+    </div>
+  </div>
+  <!-- 引入 jQuery 函式庫 -->
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <!-- 寫一些 JavaScript 程式碼來控制網頁行為 -->
+  <script>
+    // 當文件載入完成後執行以下函數
+    $(document).ready(function() {
 
-     </script>
-  </body>
-  </html>
+      // 當點擊任何一張照片時執行以下函數
+      $(".photo").click(function() {
+
+        // 將被點擊的照片隱藏起來
+        $(this).fadeOut(500);
+
+        // 如果所有的照片都隱藏了
+        if ($(".photo").length == $(".photo:hidden").length) {
+
+          // 將訊息顯示出來
+          $("#message").fadeIn(1000);
+        }
+      });
+    });
+
+  </script>
+</body>
+</html>
