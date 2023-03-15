@@ -113,7 +113,7 @@
         $(this).fadeOut(500, function() {
 
           // 如果所有的照片都隱藏了
-          if ($(".photo").length == $(".photo:hidden").length) {
+          if ($(".photo").length == $(".photo:not(:visible)").length) {
 
             // 將訊息顯示出來
             $("#message").fadeIn(1000);
@@ -123,5 +123,6 @@
     });
 
   </script>
+
 </body>
 </html>
