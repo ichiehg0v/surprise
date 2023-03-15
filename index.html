@@ -102,8 +102,6 @@
     </div>
   </div>
   <!-- 引入 jQuery 函式庫 -->
-  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-  <!-- 寫一些 JavaScript 程式碼來控制網頁行為 -->
   <script>
     // 當文件載入完成後執行以下函數
     $(document).ready(function() {
@@ -111,15 +109,16 @@
       // 當點擊任何一張照片時執行以下函數
       $(".photo").click(function() {
 
-        // 將被點擊的照片隱藏起來
-        $(this).fadeOut(500);
+        // 將被點擊的照片隱藏起來，並在動畫完成後執行回調函數
+        $(this).fadeOut(500, function() {
 
-        // 如果所有的照片都隱藏了
-        if ($(".photo").length == $(".photo:hidden").length) {
+          // 如果所有的照片都隱藏了
+          if ($(".photo").length == $(".photo:hidden").length) {
 
-          // 將訊息顯示出來
-          $("#message").fadeIn(1000);
-        }
+            // 將訊息顯示出來
+            $("#message").fadeIn(1000);
+          }
+        });
       });
     });
 
