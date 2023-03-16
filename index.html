@@ -105,32 +105,31 @@
   <script>
     // 當文件載入完成後執行以下函數
     $(document).ready(function() {
-
+  
       // 當點擊任何一張照片時執行以下函數
       $(".photo").click(function() {
-
+  
         // 將被點擊的照片隱藏起來，並在動畫完成後執行回調函數
         $(this).fadeOut(500, function() {
           // Add the 'hidden' class to the clicked photo
           $(this).addClass('hidden');
-
+  
           // 如果所有的照片都隱藏了
           if ($(".photo").length == $(".photo.hidden").length) {
-
+  
             // 將訊息顯示出來
             $("#message").fadeIn(1000);
           }
         });
       });
-
-      // 當點擊訊息時執行以下函數
+  
+      // Hide the message when clicked
       $("#message").click(function() {
-        // 將訊息隱藏起來
         $(this).fadeOut(500);
       });
     });
-
-  </script>
+  
+  </script>  
 
 
 </body>
