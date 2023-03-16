@@ -109,27 +109,25 @@
       // 當點擊任何一張照片時執行以下函數
       $(".photo").click(function() {
   
-        // 將被點擊的照片隱藏起來，並在動畫完成後執行回調函數
-        $(this).fadeOut(500, function() {
-          // Add the 'hidden' class to the clicked photo
-          $(this).addClass('hidden');
+        // 將被點擊的照片隱藏起來
+        $(this).hide();
   
-          // 如果所有的照片都隱藏了
-          if ($(".photo").length == $(".photo.hidden").length) {
+        // 如果所有的照片都隱藏了
+        if ($(".photo:hidden").length === $(".photo").length) {
   
-            // 將訊息顯示出來
-            $("#message").fadeIn(1000);
-          }
-        });
+          // 將訊息顯示出來
+          $("#message").show();
+        }
       });
   
       // Hide the message when clicked
       $("#message").click(function() {
-        $(this).fadeOut(500);
+        $(this).hide();
       });
     });
   
-  </script>  
+  </script>
+  
 
 
 </body>
